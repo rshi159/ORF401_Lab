@@ -16,3 +16,11 @@ function setCookie(c_name,value,exdays) {
    var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
    document.cookie=c_name + "=" + c_value;
 }
+
+function checkForm(form){
+   var search = form.children[1].value;
+   if (search.filter("elon") & search.filter("musk")) {
+      alert("He's not here!!!")
+   }
+
+}
