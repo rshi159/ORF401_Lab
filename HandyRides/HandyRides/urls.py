@@ -19,4 +19,6 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rides/', include('rides.urls'))
+    from django.views.generic import TemplateView
+    path('', TemplateView.as_view(template_name="index.html"))
 ]
