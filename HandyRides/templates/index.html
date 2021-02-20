@@ -3,6 +3,9 @@
 
 <html>
   <head>
+    <div class="logo_small">
+      <img src="{% static 'logo.png' %}" alt="Image of logo" class="logo_small_image">
+    </div>
 	  <script src="{% static 'main.js' %}"></script>
 	  <link rel="stylesheet" href="{% static 'main.css' %}"/>
 	</head>
@@ -10,14 +13,25 @@
 	<title> ORF 401: Spring 2020 </title>
 
   <body bgcolor="white" text="black">
+    <div id="banner">
+    </div>
     <center>
-      <h1 style="font-size:60px;">ridedirs splash page</h1>
+      <h1 >ridedirs splash page</h1>
+      <body>
+
+    <div class="container">
+      <img src="{% static 'logo_old.jpg' %}" alt="Image of car" class="image">
+      <div class="overlay">
+        <div class="text"><a href="http://127.0.0.1:8000/rides/">Find your rides!!</div>
+      </div>
+    </div>
+
       <h2 > "Take a ride with us" </h2>
       
       {% block content %}
       {% endblock %}
 
-      <h1 style="font-size:40px;"> <a href="http://127.0.0.1:8000/rides/">Find your rides!!</h1>
+      <!-- <h1 style="font-size:40px;"> <a href="http://127.0.0.1:8000/rides/">Find your rides!!</h1> -->
     </center>
   </body>
 
