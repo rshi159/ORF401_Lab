@@ -8,15 +8,20 @@
 	</head>
 
 	<title> ORF 401: Spring 2020 </title>
+
   <body bgcolor="white" text="black">
+    <!-- if cookie exists for browser, returns string. else returns null/None -->
+    <!-- if exists: do nothing -->
+    <!-- else: set cookie and redirect to splash -->
     <center>
       <h1 style="font-size:60px;">Welcome to</h1>
       <h2 > "Take a ride with us" </h2>
-      <img src="{% static 'logo.png' %}" alt="Image of logo" width="750px" height="350px" style = "padding-bottom: 100px;">
-
       {% block content %}
       {% endblock %}
 
     </center>
   </body>
+
+</head> 
+
 </html>
