@@ -1,6 +1,7 @@
 # ORF401_Lab
 ORF401_ElectronicCommerce_Lab
-[WIP] [The website will be here:](https://www.ridedirs.com "ridedirs.com")
+
+[WIP] The website will be here: [ridedirs.com](https://www.ridedirs.com)
 
 # Description
 This project is a website for ORF 401 Spring 2021 at Princeton.
