@@ -2,6 +2,9 @@
 
 <html>
   <head>
+    <div class="logo_small">
+      <img src="{% static 'logo.png' %}" alt="Image of logo" class="logo_small_image">
+    </div>
   <script src="{% static 'main.js' %}"></script>
   <link rel="stylesheet" href="{% static 'main.css' %}"/>
 </head>
@@ -15,7 +18,7 @@
 
       {% block content %}
       {% endblock %}
-
+      <h2 style="font-size:25px;"><a href="http://127.0.0.1:8000/">Return to splash page</h2>
     </center>
   </body>
 </html>
