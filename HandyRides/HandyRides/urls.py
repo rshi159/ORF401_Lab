@@ -20,5 +20,6 @@ from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rides/', include('rides.urls')),
+    path('add_ride/',include('add_ride.urls')),
     path('', TemplateView.as_view(template_name="index.html"))
 ]

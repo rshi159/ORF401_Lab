@@ -1,5 +1,5 @@
 from django import forms
-from .models import Person
+from rides.models import Person
 
 
 class RideForm(forms.Form):

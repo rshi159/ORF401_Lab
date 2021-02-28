@@ -1,0 +1,24 @@
+{% load static %}
+
+<html>
+  <head>
+    <div class="logo_small">
+      <img src="{% static 'logo.png' %}" alt="Image of logo" class="logo_small_image">
+    </div>
+  <script src="{% static 'main.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'main.css' %}"/>
+</head>
+
+<title> ORF 401: Spring 2020 </title>
+  <body bgcolor="white" text="black" onload="checkCookie('ORF401', 1, 4)">
+    <center>
+      <h1 style="font-size:60px;">Add rides Here</h1>
+
+      <img src="{% static 'logo.png' %}" alt="Image of logo" width="750px" height="350px" style = "padding-bottom: 100px;">
+
+      {% block content %}
+      {% endblock %}
+      <h2 style="font-size:25px;"><a href="http://127.0.0.1:8000/">Return to splash page</h2>
+    </center>
+  </body>
+</html>

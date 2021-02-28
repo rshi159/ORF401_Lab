@@ -1,31 +1,79 @@
 {% extends "base.html" %}
-
 {% block content %}
+<!-- figure this out -->
 <div class="main"> 
+  <style type="text/css">
+    td {
+      border: 1px solid black;
+    }
+    th{
+      border: 4px solid black;
+    } 
+    table{
+      border-collapse: collapse;
+      text-align: center;
+      font-size: 24px;
+      background-color: rgba(235,235,255,1)
+    }
+    tr:hover {
+      background-color: #ffa;
+    }
+
+  </style>
   <table>
-      {% for person in people %}
-      <tr>
-          <td>{{ person.first_name }}</td> 
-          <td>{{ person.origination }}</td>
-          <td>{{ person.destination_city }}</td> 
-          <td>{{ person.destination_state }}</td> 
-          <td>{{ person.date }}</td> 
-          <td>{{ person.time }}</td> 
-          <td>{{ person.taking_passengers }}</td>
-          <td>{{ person.seats_available }}</td> 
-      </tr>
-      {% endfor %} 
+    <tr>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Email</th>
+      <th>Rating</th>
+      <th>O_Addr</th>
+      <th>O_City</th>
+      <th>O_State</th>
+      <th>D_Addr</th>
+      <th>D_City</th>
+      <th>D_State</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Taking_Passenger</th>
+      <th>Seats_Available</th>
+      <th>Vehicle_Model</th>
+    </tr>
+    {% for person in people %}
+    <tr>
+        <td>{{ person.first_name }}</td> 
+        <td>{{ person.last_name }}</td> 
+        <td>{{ person.email }}</td> 
+        <td>{{ person.rating}}</td> 
+        <td>{{ person.origination_address}}</td>
+        <td>{{ person.origination_city }}</td>
+        <td>{{ person.origination_state }}</td>
+        <td>{{ person.destination_address}}</td>
+        <td>{{ person.destination_city }}</td> 
+        <td>{{ person.destination_state }}</td> 
+        <td>{{ person.date }}</td> 
+        <td>{{ person.time }}</td> 
+        <td>{{ person.taking_passengers }}</td>
+        <td>{{ person.seats_available }}</td> 
+        <td>{{ person.vehicle_model }}</td> 
+    </tr>
+    {% endfor %} 
   </table>
 </div> 
 
-<form action="{% url 'rides:index' %}" method="get">
+<form action="{% url 'rides:index' %}" method="get" style="padding-top: 40px;font-size: 36px">
     {{ form }}
-    <input type="submit" value="Submit" onclick="return checkForm(this.parentNode);">
+    <input type="submit" value="Submit" onclick="return checkForm(this.parentNode);" style="font-size: 24px">
 </form>
 <form action="{% url 'rides:create' %}" method="post">
+    <!-- protects from csrf attack -->
     {% csrf_token %}
-    {{ new_ride_form }}
-    <input type="submit" value="Submit">
+    <!--  double_curly_braces reserve space for your data -->
+    <!-- new_ride_form is declared in views.py -->
+    <!-- context["form"] = RideForm()
+         context["new_ride_form"] = NewRideForm() -->
+    <!-- {{ new_ride_form }} -->
+    <!-- <input type="submit" value="Submit"> -->
 </form>
+<h2 style="font-size:25px;"><a href="http://127.0.0.1:8000/add_ride">Add a Ride</h2>
 
 {% endblock %}

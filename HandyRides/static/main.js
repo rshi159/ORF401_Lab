@@ -43,12 +43,14 @@ function checkForm(form){
    // //https://stackoverflow.com/questions/10232366/how-to-check-if-a-variable-is-null-or-empty-string-or-all-whitespace-in-javascri
    if (search_city == null | search_city.match(/^ *$/) !== null)
    {
+      // alert("Please fill both search fields");
       console.log("no input in search city");
       return false;
    }
    if (search_state == null | search_state.match(/^ *$/) !== null)
    {
       console.log("no input in search state");
+      // alert("Please fill both search fields");
       return false;
    }
 

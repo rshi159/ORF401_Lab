@@ -1,0 +1,59 @@
+{% extends "add_ride.html" %}
+
+{% block content %}
+<!-- figure this out -->
+<style type="text/css">
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type=text]:focus{
+      background-color: lightblue;
+    }
+    input[type=submit] {
+      width: 100%;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type=submit]:hover {
+      background-color: rgba(100,100,100,1);
+    }
+  </style>
+<div class="main"> 
+  <table>
+      {% for person in people %}
+      <tr>
+          <td>{{ person.first_name }}</td> 
+          <td>{{ person.origination }}</td>
+          <td>{{ person.destination_city }}</td> 
+          <td>{{ person.destination_state }}</td> 
+          <td>{{ person.date }}</td> 
+          <td>{{ person.time }}</td> 
+          <td>{{ person.taking_passengers }}</td>
+          <td>{{ person.seats_available }}</td> 
+      </tr>
+      {% endfor %} 
+  </table>
+</div> 
+<div>
+  <form action="{% url 'rides:create' %}" method="post" style="font-size: 36px">
+      <!-- protects from csrf attack -->
+      {% csrf_token %}
+      <!--  double_curly_braces reserve space for your data -->
+      <!-- new_ride_form is declared in views.py -->
+      <!-- context["form"] = RideForm()
+           context["new_ride_form"] = NewRideForm() -->
+      {{ new_ride_form }}
+      <input type="submit" value="Submit" style="font-size: 24px">
+      <h2 style="font-size:25px;padding-top: 40px"><a href="http://127.0.0.1:8000/rides">Search for a Ride</h2>
+  </form>
+</div>
+{% endblock %}

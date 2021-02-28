@@ -13,16 +13,13 @@ def index(request):
 # check requests and filter.
   if "search_state" in request.GET:
     search = request.GET["search_state"]
-
     context["people"] = Person.objects.filter(
-        origination_state__icontains=search) | Person.objects.filter(destination_state__icontains=search) | Person.objects.filter(destination_city__icontains=search)
-  
+        origination_state__icontains=search) | Person.objects.filter(destination_state__icontains=search)
   if "search_city" in request.GET:
     search = request.GET["search_city"]
-
     context["people"] = context["people"].filter(
-        origination_city__icontains=search) | Person.objects.filter(destination_state__icontains=search) | Person.objects.filter(destination_city__icontains=search)
-  	
+        origination_city__icontains=search) | Person.objects.filter(destination_city__icontains=search)
+  
   context["form"] = RideForm()
   context["new_ride_form"] = NewRideForm()
   # context has items "people", "form", "new_ride_form"
@@ -38,7 +35,7 @@ def index(request):
   # request is The request object used to generate this response.
   # template is the full name of a template to use or sequence of template names
   # context is A dictionary of values to add to the template context.
-  return render(request, "index_view.html", context)
+  return render(request, "add_ride_view.html", context)
 
 def create(request):
   if request.method == "POST":
