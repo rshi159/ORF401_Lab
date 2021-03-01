@@ -10,7 +10,7 @@ phone_message = 'Phone number must be entered in the format: 05999999999'
  # your desired format 
 phone_regex = RegexValidator(
     # regex=r^[-+]?[0-9]+$,
-    regex = re.compile(r'\d+'),
+    regex = r'^[0-9]+$',
     message=phone_message
 )
 
@@ -23,8 +23,8 @@ class Person(models.Model):
   rating = models.IntegerField()
   # phone_number = models.IntegerField()
   # finally, your phone number field
-  # phone_number = models.CharField(validators=[phone_regex], max_length=60)
-  phone_number = models.CharField(max_length=60)
+  phone_number = models.CharField(validators=[phone_regex], max_length=60)
+  # phone_number = models.CharField(max_length=60)
   origination_address = models.CharField(max_length=64)
   origination_city = models.CharField(max_length=64)
   origination_state = models.CharField(max_length=2)
