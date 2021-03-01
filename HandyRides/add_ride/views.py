@@ -43,7 +43,6 @@ def create(request):
     if new_ride.is_valid():
       new_ride.save()
     else:
-      logger.error('Invalid Form')
-      new_ride=NewRideForm()
+      new_ride.save()
   # Returns an HttpResponseRedirect to the appropriate URL for the arguments passed.
   return redirect("/rides")
