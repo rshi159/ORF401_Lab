@@ -5,7 +5,7 @@ Updated 03/01/2021 By: Robert Shi
 
 [WIP] The website will be here [Live]: [ridedirs.com](www.ridedirs.com)
 
-[WIP] Heroku site [Live]: [link] [ridedirs.com](https://young-crag-30528.herokuapp.com/add_ride/)
+[WIP] Heroku site [Live]: [link](https://young-crag-30528.herokuapp.com/add_ride/)
 
 *Still having issue with adding rides to the website. The issue is not replicated on localhost. The add_ride page returns an invalid 
 form/invalid person error. Current behavior is to start a new form when an invalid form is submitted, so no new rides can currently
