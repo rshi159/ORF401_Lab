@@ -24,7 +24,7 @@ function checkCookie(c_name, value, exdays) {
       console.log("New Visitor");
       setCookie(c_name, value, exdays);
       console.log("Saved cookie. Redirecting...");
-      window.location.replace("http://127.0.0.1:8000/");
+      window.location.replace("/");
    }
    console.log("exited check cookie function");
 }

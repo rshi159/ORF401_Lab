@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-
+import logging
 from .models import Person
 
 # relative import of forms
 from .forms import RideForm, NewRideForm
 # Create your views here.
-
+logger = logging.getLogger(__name__)
 
 def index(request):
 # make a dict named context
@@ -40,7 +40,10 @@ def index(request):
 def create(request):
   if request.method == "POST":
     new_ride = NewRideForm(request.POST)
-    new_ride.save()
-
+    if new_ride.is_valid():
+      new_ride.save()
+    else:
+      logger.error('Invalid Form')
+      new_ride=NewRideForm()
   # Returns an HttpResponseRedirect to the appropriate URL for the arguments passed.
   return redirect("/rides")

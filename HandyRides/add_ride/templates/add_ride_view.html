@@ -44,7 +44,7 @@
   </table>
 </div> 
 <div>
-  <form action="{% url 'rides:create' %}" method="post" style="font-size: 36px">
+  <form action="{% url 'add_ride:create' %}" method="post" style="font-size: 36px">
       <!-- protects from csrf attack -->
       {% csrf_token %}
       <!--  double_curly_braces reserve space for your data -->
@@ -53,7 +53,7 @@
            context["new_ride_form"] = NewRideForm() -->
       {{ new_ride_form }}
       <input type="submit" value="Submit" style="font-size: 24px">
-      <h2 style="font-size:25px;padding-top: 40px"><a href="http://127.0.0.1:8000/rides">Search for a Ride</h2>
+      <h2 style="font-size:25px;padding-top: 40px"><a href="/rides">Search for a Ride</h2>
   </form>
 </div>
 {% endblock %}
